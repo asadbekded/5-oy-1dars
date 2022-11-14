@@ -24,9 +24,19 @@
 }
 
 .header__mode{
+   position: relative;
    font-weight: 600;
    font-size: 16px;
    line-height: 22px;
    color: #111517;
-   margin-left: 8px;
+}
+.header__mode::before{
+   position: absolute;
+   width: 20px;
+   height: 20px;
+   background-image: url("../../assets/images/mode.icon.svg");
+   background-repeat: no-repeat;
+   background-size: auto;
+   left: -26px;
+   content: '';
 }

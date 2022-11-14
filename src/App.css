@@ -380,7 +380,7 @@ img{
 }
 .card__list{
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 0px;

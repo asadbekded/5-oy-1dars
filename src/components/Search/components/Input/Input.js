@@ -3,7 +3,7 @@ import "./Input.css"
 
 const Input = () => {
    return(
-      <input className = "search__inp" type="text" placeholder="Search for a country…" />
+      <input className = "search__inp" type="serch" placeholder="Search for a country…" />
    );
 };
 
