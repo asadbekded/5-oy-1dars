@@ -37,3 +37,12 @@
    margin: 0px;
    padding: 0px;
 }
+.img-box{
+   height: 160px;
+}
+@media only screen and (max-width: 575px){
+   .card__item{
+      margin: 0px auto;
+      margin-bottom: 40px;
+   }
+ }
