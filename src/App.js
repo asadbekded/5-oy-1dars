@@ -47,11 +47,18 @@ function App() {
                      <input onChange={getValue} className = "search__inp" type="serch" placeholder="Search for a country…" />
                      <select onClick={getOpvalue} className="search__sel">
                        <option value="" disabled selected>Filter by Region</option>
-                       {
+                       <option value="Oceania">Oceania</option>
+                       <option value="Asia">Asia</option>
+                       <option value="Americas">Americas</option>
+                       <option value="Europe">Europe</option>
+                       <option value="Africa">Africa</option>
+                       <option value="Antarctic">Antarctic</option>
+
+                       {/* {
 								data.map((el) => (
 									<option  value={el.region}>{el.region}</option>
 								))
-							  };
+							  }; */}
                      </select>
                   </form>
                </div>
