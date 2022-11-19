@@ -45,7 +45,7 @@ function App() {
                <div className="container">
                   <form method="post" className="search__form">
                      <input onChange={getValue} className = "search__inp" type="serch" placeholder="Search for a country…" />
-                     <select onClick={getOpvalue} className="search__sel">
+                     <select onChange={getOpvalue} className="search__sel">
                        <option value="" disabled selected>Filter by Region</option>
                        <option value="Oceania">Oceania</option>
                        <option value="Asia">Asia</option>
