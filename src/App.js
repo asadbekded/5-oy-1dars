@@ -59,6 +59,7 @@ function App() {
 									<option  value={el.region}>{el.region}</option>
 								))
 							  }; */}
+							  
                      </select>
                   </form>
                </div>
