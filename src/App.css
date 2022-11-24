@@ -451,3 +451,11 @@ img{
     margin-top: 40px;
   }
 }
+.error-img{
+  display: block;
+  margin: 0px auto;
+}
+.no-img{
+  display: block;
+  margin: 0px auto;
+}

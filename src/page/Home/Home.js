@@ -1,0 +1,85 @@
+import { useState, useEffect } from 'react';
+import Anima from '../../assets/images/Spinner-1s-200px.svg';
+import Card from '../../components/Card/Card';
+
+export const Home = () => {
+
+   let [data, setData] = useState([]);
+
+	let [value, setValue] = useState('');
+	const getValue = (evt) => {
+		setValue(evt.target.value)
+	}
+	
+	let [selvalue, opValue] = useState('')
+
+	const getOpvalue= (evt) => {
+		opValue(evt.target.value)
+	}
+	
+	useEffect(() => {
+		if(value.length){
+			fetch(`https://restcountries.com/v3.1/name/` + value)
+         .then(res => res.json())
+         .then(data => setData(data));
+		}else{
+			fetch('https://restcountries.com/v3.1/all')
+         .then(response => response.json())
+         .then(data => setData(data));
+		}
+		if(selvalue.length){
+			fetch(`https://restcountries.com/v3.1/region/` + selvalue)
+         .then(res => res.json())
+         .then(data => setData(data));
+		}
+	}, [value, selvalue]);
+
+   return(
+      <>
+        <main>
+			   <section>
+               <div className="container">
+                  <div  className="search__form">
+                     <input onChange={getValue} className = "search__inp" type="serch" placeholder="Search for a country…" />
+                     <select onChange={getOpvalue} className="search__sel">
+                       <option value="" disabled selected>Filter by Region</option>
+                       <option value="Oceania">Oceania</option>
+                       <option value="Asia">Asia</option>
+                       <option value="Americas">Americas</option>
+                       <option value="Europe">Europe</option>
+                       <option value="Africa">Africa</option>
+                       <option value="Antarctic">Antarctic</option>
+
+                       {/* {
+								data.map((el) => (
+									<option  value={el.region}>{el.region}</option>
+								))
+							  }; */}
+							  
+                     </select>
+                  </div>
+               </div>
+            </section>
+				<section>
+					<div className='container'>
+						{/* <ul className='card__list'>
+							{data.map((item) => (
+                        <Card  obj={item}/>
+							))}
+						</ul> */}
+
+                  {
+                     data.length ? (
+                        <ul className='card__list'>
+							      {data.map((item) => (
+                            <Card  obj={item}/>
+							      ))}
+						      </ul>
+                     ) : (<img className='no-img' src={Anima} alt='delete.img' width={250} height={100}/>)
+                  };
+					</div>
+				</section>
+			</main>
+      </>
+   )
+}
