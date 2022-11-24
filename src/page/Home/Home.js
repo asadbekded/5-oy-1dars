@@ -62,11 +62,6 @@ export const Home = () => {
             </section>
 				<section>
 					<div className='container'>
-						{/* <ul className='card__list'>
-							{data.map((item) => (
-                        <Card  obj={item}/>
-							))}
-						</ul> */}
 
                   {
                      data.length ? (

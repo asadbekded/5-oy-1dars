@@ -1,6 +1,7 @@
 import './Flag.css'
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from 'react';
+import Anima from '../../assets/images/Spinner-1s-200px.svg';
 
 export const Flag = () => {
 
@@ -16,10 +17,12 @@ export const Flag = () => {
 
    return(
       <div className="container">
-        
-         <ul className="flag-list">
+
             {
-               data.map(el => (
+               data.length ? (
+                  <ul className="flag-list">
+                    {
+                       data.map(el => (
                   <li className="flag-item">
                      <div className='hard-box'>
                        <img className='flag-img' src={el.flags.svg} alt="Germany-flag" width={450} height={300}/>
@@ -49,9 +52,12 @@ export const Flag = () => {
                        </div>
                      </div>
                   </li>
-               ))
-            }
-         </ul>
+                       ))
+                    }
+                  </ul>
+               ) : (<img className='no-img' src={Anima} alt='delete.img' width={250} height={100}/>)
+            };
+         
       </div>
    )
 }
