@@ -11,12 +11,12 @@
 }
 .flag-content{
    width: 100%;
-   max-width: 598px;
+   max-width: 600px;
    /* margin-left: 120px; */
 }
 .flag-box{
    display: flex;
-   align-items: top;
+   align-items: flex-start;
    justify-content: space-between;
 }
 .flag__title{
@@ -51,17 +51,16 @@
    box-shadow: 0px 0px 14px 4px #00000007;
    border-radius: 10.0057px;
 }
-.flag-text{
+.flag__text{
    font-weight: 500;
    font-size: 16px;
    line-height: 114%;
    color: #111517;
    margin: 0px;
    padding: 0px;
+   margin-bottom: 15px;
 }
-.flag__text + .flag__text{
-   margin-top: 8px;
-}
+
 .flag__str{
    font-weight: 600;
    font-size: 18px;
@@ -69,6 +68,10 @@
    color: #111517;
    margin: 0px;
    padding: 0px;
+}
+.fox-box{
+  width: 100%;
+  max-width: 300px;
 }
 @media only screen and (max-width: 1100px){
    .flag-item{
