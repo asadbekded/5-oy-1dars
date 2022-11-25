@@ -71,8 +71,32 @@
    padding: 0px;
 }
 .fox-box{
-  width: 100%;
-  max-width: 300px;
+   width: 100%;
+   max-width: 300px;
+}
+.back{
+   position: relative;
+   margin-top: 80px;
+   border: none;
+   padding: 10px 39px 10px 60px;
+   background: #FFFFFF;
+   box-shadow: 0px 0px 7px #0000004b;
+   border-radius: 6px;
+   font-weight: 300;
+   font-size: 16px;
+   line-height: 20px;
+   color: #111517;
+}
+.back::before{
+   position: absolute;
+   background-image: url("../../assets/images/call-made.svg");
+   background-repeat: no-repeat;
+   background-size: auto;
+   width: 20px;
+   height: 20px;
+   left: 28px;
+   top: 9px;
+   content: '';
 }
 @media only screen and (max-width: 1100px){
    .flag-item{
@@ -120,6 +144,9 @@
 }
 
 @media only screen and (max-width: 570px){
+   .flag-list{
+      margin-top: 60px;
+   }
    .flagbtn-box{
       display: block;
       margin-left: 0px;
@@ -128,6 +155,25 @@
       margin-left: 0px;
       margin-bottom: 15px;
       margin-right: 10px;
+   }
+   .back{
+      margin-top: 40px;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 20px;
+      color: #111517;
+      padding: 6px 23px 6px 50px;
+   }
+   .back::before{
+      position: absolute;
+      background-image: url("../../assets/images/call-made.svg");
+      background-repeat: no-repeat;
+      background-size: auto;
+      width: 20px;
+      height: 20px;
+      left: 18px;
+      top: 7px;
+      content: '';
    }
    
 }

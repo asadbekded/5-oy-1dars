@@ -1,11 +1,13 @@
 import './Flag.css'
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { useState, useEffect } from 'react';
 import Anima from '../../assets/images/Spinner-1s-200px.svg';
 
 export const Flag = () => {
 
    const { name } = useParams();
+
+   const navigat = useNavigate()
 
    let [data, setFlag] = useState([]);
 
@@ -17,17 +19,17 @@ export const Flag = () => {
 
    return(
       <div className="container">
-
+         <button onClick={() => navigat(-1)} className='back'>Back</button>
             {
                data.length ? (
                   <ul className="flag-list">
                     {
                        data.map(el => (
-                  <li className="flag-item">
-                     <div className='hard-box'>
+                         <li className="flag-item">
+                           <div className='hard-box'>
                        <img className='flag-img' src={el.flags.svg} alt="Germany-flag" width={450} height={300}/>
-                     </div>
-                     <div className='flag-content'>
+                           </div>
+                           <div className='flag-content'>
                        <h2 className="flag__title">{el.name}</h2>
                        <div className='flag-box'>
                        <div>
@@ -52,8 +54,8 @@ export const Flag = () => {
                            ))
                         }
                        </div>
-                     </div>
-                  </li>
+                           </div>
+                         </li>
                        ))
                     }
                   </ul>
