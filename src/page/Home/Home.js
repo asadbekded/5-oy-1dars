@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import Anima from '../../assets/images/Spinner-1s-200px.svg';
 import Card from '../../components/Card/Card';
+import { useTranslation } from "react-i18next";
 
-export const Home = () => {
+export const Home = ({ btnTheme }) => {
 
    let [data, setData] = useState([]);
 
@@ -34,15 +35,17 @@ export const Home = () => {
 		}
 	}, [value, selvalue]);
 
+   const [t] = useTranslation()
+
    return(
       <>
         <main>
-			   <section>
+			   <section className = {btnTheme ? 'dark' : ''}>
                <div className="container">
                   <div  className="search__form">
-                     <input onChange={getValue} className = "search__inp" type="serch" placeholder="Search for a country…" />
+                     <input onChange={getValue} className = "search__inp" type="serch" placeholder={t('serch.inp')} />
                      <select onChange={getOpvalue} className="search__sel">
-                       <option value="" disabled selected>Filter by Region</option>
+                       <option value="" disabled selected>{t('serch.sel')}</option>
                        <option value="Oceania">Oceania</option>
                        <option value="Asia">Asia</option>
                        <option value="Americas">Americas</option>
@@ -60,14 +63,14 @@ export const Home = () => {
                   </div>
                </div>
             </section>
-				<section>
+				<section className = {btnTheme ? 'dark' : ''}>
 					<div className='container'>
 
                   {
                      data.length ? (
                         <ul className='card__list'>
 							      {data.map((item) => (
-                            <Card  obj={item}/>
+                            <Card btnTheme={btnTheme} key={item.name.common}  obj={item}/>
 							      ))}
 						      </ul>
                      ) : (<img className='no-img' src={Anima} alt='delete.img' width={250} height={100}/>)

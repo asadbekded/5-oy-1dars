@@ -2,8 +2,9 @@ import './Flag.css'
 import { useParams, useNavigate } from "react-router-dom"
 import { useState, useEffect } from 'react';
 import Anima from '../../assets/images/Spinner-1s-200px.svg';
+import { useTranslation } from "react-i18next";
 
-export const Flag = () => {
+export const Flag = ({btnTheme}) => {
 
    const { name } = useParams();
 
@@ -17,9 +18,12 @@ export const Flag = () => {
          .then(data => setFlag(data));
 	}, [name]);
 
+   const [t] = useTranslation()
+
    return(
-      <div className="container">
-         <button onClick={() => navigat(-1)} className='back'>Back</button>
+      <div  className = {btnTheme ? 'dark' : ''}>
+         <div className="container">
+         <button onClick={() => navigat(-1)} className='back'>{t('flag.bac')}</button>
             {
                data.length ? (
                   <ul className="flag-list">
@@ -33,21 +37,21 @@ export const Flag = () => {
                        <h2 className="flag__title">{el.name}</h2>
                        <div className='flag-box'>
                        <div>
-                        <p className="flag__text"><strong className="flag__str">Native Name : </strong>{el.nativeName}</p>
-                        <p className="flag__text"><strong className="flag__str">Population : </strong>{el.population}</p>
-                        <p className="flag__text"><strong className="flag__str">Region : </strong>{el.region}</p>
-                        <p className="flag__text"><strong className="flag__str">Sub Region : </strong>{el.subregion}</p>
-                        <p className="flag__text"><strong className="flag__str">Capital : </strong>{el.capital}</p>
+                        <p className="flag__text"><strong className="flag__str">{t('flag.name')} : </strong>{el.nativeName}</p>
+                        <p className="flag__text"><strong className="flag__str">{t('card.text1')} : </strong>{el.population}</p>
+                        <p className="flag__text"><strong className="flag__str">{t('card.text2')} : </strong>{el.region}</p>
+                        <p className="flag__text"><strong className="flag__str">{t('flag.sub')} : </strong>{el.subregion}</p>
+                        <p className="flag__text"><strong className="flag__str">{t('card.text3')} : </strong>{el.capital}</p>
                        </div>
                        <div className='fox-box'>
-                         <p className="flag__text"><strong className="flag__str">Top Level Domain : </strong>{el.alpha2Code}</p>
-                         <p className="flag__text"><strong className="flag__str">Currencies : </strong>{`${el.currencies.map(itm => (itm.symbol))} - ${el.currencies.map(itm => (itm.name))}`}</p>
-                         <p className="flag__text"><strong className="flag__str">Languages : </strong>{`${el.languages.map(item => (item.name))} , ${el.languages.map(item => (item.nativeName))}`}</p>
+                         <p className="flag__text"><strong className="flag__str">{t('flag.dom')} : </strong>{el.alpha2Code}</p>
+                         <p className="flag__text"><strong className="flag__str">{t('flag.cur')} : </strong>{`${el.currencies.map(itm => (itm.symbol))} - ${el.currencies.map(itm => (itm.name))}`}</p>
+                         <p className="flag__text"><strong className="flag__str">{t('flag.lang')} : </strong>{`${el.languages.map(item => (item.name))} , ${el.languages.map(item => (item.nativeName))}`}</p>
                        </div>
                        </div>
 
                        <div className='flagbtn-box'>
-                        <h3 className='flagbtn-title'>Border Countries: </h3>
+                        <h3 className='flagbtn-title'>{t('flag.bor')}: </h3>
                         {
                            el.borders.map(item => (
                               <button className='flag-btn' type='button'>{item}</button>
@@ -61,7 +65,7 @@ export const Flag = () => {
                   </ul>
                ) : (<img className='no-img' src={Anima} alt='delete.img' width={250} height={100}/>)
             }
-         
+         </div>
       </div>
    )
 }
