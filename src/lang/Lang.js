@@ -2,8 +2,8 @@ export const Lang = {
   en: {
    header:{
       logo: 'Where in the world?',
-      dark: 'Dark Mode',
-      light: 'Light Mode',
+      dark: 'Light Mode',
+      light: 'Dark Mode',
    },
    serch: {
       inp: 'Search for a country…',
@@ -27,8 +27,8 @@ export const Lang = {
   uz: {
    header:{
       logo: 'Dunyoning qayerida?',
-      dark: 'Tun',
-      light: 'Kun',
+      dark: 'Kun',
+      light: 'Tun',
    },
    serch: {
       inp: 'Mamlakatni qidiring…',
