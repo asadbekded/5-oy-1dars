@@ -3,6 +3,7 @@ import Anima from "../../assets/images/Spinner-1s-200px.svg";
 import Card from "../../components/Card/Card";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import './Home.css';
 
 export const Home = ({ btnTheme }) => {
   let [data, setData] = useState([]);
@@ -94,7 +95,7 @@ export const Home = ({ btnTheme }) => {
   return (
     <>
       <motion.main variants={sectionVariant} initial="hidden" animate="visible">
-        <section className={btnTheme ? "dark" : ""}>
+        <section className={btnTheme ? "dark__form" : ""}>
           <div className="container">
             <div className="search__form">
               <motion.input
@@ -118,6 +119,7 @@ export const Home = ({ btnTheme }) => {
             </div>
           </div>
         </section>
+
         <section className={btnTheme ? "dark" : ""}>
           <div className="container">
             {data.length ? (

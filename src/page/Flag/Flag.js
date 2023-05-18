@@ -34,7 +34,7 @@ export const Flag = ({ btnTheme }) => {
   const [t] = useTranslation();
 
   return (
-    <motion.div variants={sectionVariant} initial='hidden' animate='visible' className={btnTheme ? "dark" : ""}>
+    <motion.div variants={sectionVariant} initial='hidden' animate='visible' className={btnTheme ? "dark__flag" : ""}>
       <div className="container">
         <button onClick={() => navigat(-1)} className="back">
           {t("flag.bac")}

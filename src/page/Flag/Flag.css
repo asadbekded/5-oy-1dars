@@ -76,7 +76,7 @@
 }
 .back{
    position: relative;
-   margin-top: 80px;
+   margin-top: 100px;
    border: none;
    padding: 10px 39px 10px 60px;
    background: #FFFFFF;
@@ -98,16 +98,16 @@
    top: 9px;
    content: '';
 }
-.dark .flag__title{
+.dark__flag .flag__title{
    color: #fff;
 }
-.dark .flag__text{
+.dark__flag .flag__text{
    color: #fff;
 }
-.dark .flag__str{
+.dark__flag .flag__str{
    color: #fff;
 }
-.dark .flagbtn-title{
+.dark__flag .flagbtn-title{
    color: #fff;
 }
 @media only screen and (max-width: 1100px){
@@ -169,7 +169,7 @@
       margin-right: 10px;
    }
    .back{
-      margin-top: 40px;
+      margin-top: 120px;
       font-weight: 300;
       font-size: 14px;
       line-height: 20px;
